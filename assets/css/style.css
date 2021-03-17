@@ -1,0 +1,127 @@
+* {
+    font: arial black;
+}
+
+
+
+body {
+    background-color: rgb(210, 191, 255);
+    width: 100%;
+    font-family: 'Indie Flower', cursive;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+
+}
+
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+
+.header {
+    color: hotpink;
+}
+
+
+.title-container {
+    width: 200px;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    border-radius: 15px;
+    background-color: white;
+}
+
+
+/* List */
+
+.list {
+   display: flex;
+   align-items: center;
+   flex-direction: column;
+   background-color: lightblue;
+   width: 500px;
+   max-width: 500px;
+    box-sizing: border-box; 
+   padding: 20px;
+   border-radius: 15px;
+   box-shadow: 3px 3px 15px  hotpink;
+}
+
+/* items */
+
+ul {
+    list-style-type: none;
+}
+
+.items {
+    margin: 0;
+    padding: 30px;
+    padding-left: 0;
+    list-style-type: none;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+
+li {
+    border: 0; 
+    border-bottom: 1px dashed #000;
+    padding: 15px 0;
+
+}
+
+.input:focus {
+    outline: none;
+}
+
+/* Done button */
+
+.items .done-button {
+    display: inline-block;
+    font-size: 0.8em;
+    text-decoration: none;
+    background-color: hotpink;
+    width: fit-content;
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+    box-shadow: 3px 3px 3px lightslategrey;
+}
+
+.done-button:hover {
+    background-color: lightpink;
+}
+
+.input {
+    border: solid pink;
+    height: 20px;
+    width: 200px;
+}
+
+.search-bar {
+    display: flex;
+    flex-direction: row;
+}
+
+.submit-btn {
+    display: inline-block;
+    font-size: 0.8em;
+    text-decoration: none;
+    background-color: hotpink;
+    width: 35px;
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+    box-shadow: 3px 3px 3px lightslategrey;
+}
+
+.submit-btn:hover {
+    background-color: lightpink;
+}
