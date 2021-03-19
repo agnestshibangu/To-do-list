@@ -61,7 +61,8 @@ ul {
 
 .items {
     margin: 0;
-    padding: 30px;
+    width: 90%;
+    padding-top: 30px;
     padding-left: 0;
     list-style-type: none;
     display: flex;
@@ -69,6 +70,15 @@ ul {
     flex-direction: column;
 }
 
+.item-box {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.item {
+    width: 75%;
+}
 
 li {
     border: 0; 
@@ -83,17 +93,39 @@ li {
 
 /* Done button */
 
-.items .done-button {
-    display: inline-block;
+.trash {
+    margin-top: 15px;
+    width: 15%!;
+    height: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 0.8em;
     text-decoration: none;
-    background-color: hotpink;
-    width: fit-content;
+    background-color: rgb(158, 105, 255);
     border: none;
     padding: 5px;
     border-radius: 5px;
     box-shadow: 3px 3px 3px lightslategrey;
 }
+
+.items .button {
+    display:  flex;
+    justify-content: flex-end;
+    font-size: 0.8em;
+    text-decoration: none;
+    background-color: hotpink;
+    width: 59px;
+    height: 40px;
+    border: none;
+    margin-right: 10px;
+    padding: 5px;
+    border-radius: 5px;
+    box-shadow: 3px 3px 3px lightslategrey;
+
+}
+
+
 
 .done-button:hover {
     background-color: lightpink;
@@ -103,7 +135,17 @@ li {
     border: solid pink;
     height: 20px;
     width: 200px;
+    margin-top: 20px;
 }
+
+.done {
+    text-decoration: line-through;
+}
+
+.notdone {
+    background-color: lightsalmon;
+}
+
 
 .search-bar {
     display: flex;

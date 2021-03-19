@@ -1,3 +1,27 @@
+<?php 
+
+require_once 'app/init.php';
+
+$itemsQuery = $db->prepare("
+        SELECT id, name, done 
+        FROM items
+        WHERE user = :user
+");
+
+$itemsQuery->execute([
+    'user' => $_SESSION['user_id']
+]);
+
+$items = $itemsQuery->rowCount() ? $itemsQuery : [];
+
+
+
+
+
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
     <head>
@@ -12,22 +36,42 @@
         <title>To do list</title>
     </head>
 
+    <body>
 
-        <body>
+        <!-- TITRE -->
+
             <div class="list">
                 <div class="title-container">
                     <h1 class="header">To do list</h1>
                 </div>
 
-
-
-
+        <!-- LISTE TACHE -->
+                
+                <?php if(!empty($items)): ?>
                 <ul class="items">
-                    <li><span class="item">Pick up shopping</span>
-                    <button class="done-button"><a href="#">Mark as done</a>
-                </li></button>
-                    <li><span class="item done">walk doggo</span></li>
+                    <?php foreach($items as $item): ?>
+                            <li class="item-box">
+                                <span class="item<?php echo $item['done'] ? ' done': ' ' ?>"><?php echo $item['name']; ?> </span>
+                                <?php if(!$item['done']): ?>
+                                    <button class="button"><a href="mark.php?as=done&item=<?php echo $item['id']; ?>">Mark as done</a></button>
+                                <?php elseif($item['done']): ?>
+                                    <button class="button"><a href="mark.php?as=notdone&item=<?php echo $item['id']; ?>">Not done</a></button>    
+                                <?php endif; ?>
+                                <button class="trash"><a href="mark.php?as=delete&item=<?php echo $item['id']; ?>"><i class="fas fa-trash-alt"></i></a></button> 
+                            </li>   
+                            
+                    <?php endforeach; ?>
                 </ul>
+                <?php else: ?>
+                    <p>You haven't added any items yet.</p>
+                <?php endif; ?>
+                
+                
+                
+                
+
+
+            <!-- BARRE D'ENTREE -->
 
 
                 <span class="search-bar">
@@ -41,8 +85,11 @@
         
 
 
+
             
 
         </body>
 </html>
+
+
 
