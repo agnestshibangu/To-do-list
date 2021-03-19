@@ -14,12 +14,6 @@ $itemsQuery->execute([
 
 $items = $itemsQuery->rowCount() ? $itemsQuery : [];
 
-
-
-
-
-
-
 ?>
 
 <!DOCTYPE html>
@@ -46,6 +40,7 @@ $items = $itemsQuery->rowCount() ? $itemsQuery : [];
                 </div>
 
         <!-- LISTE TACHE -->
+
                 
                 <?php if(!empty($items)): ?>
                 <ul class="items">
@@ -81,7 +76,7 @@ $items = $itemsQuery->rowCount() ? $itemsQuery : [];
                     </form>
                 </span>
 
-            </div>
+            
         
 
 
